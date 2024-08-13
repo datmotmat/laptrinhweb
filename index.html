@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="./images/logoShop.jpg" /></a>
+            </div>
+            <div class="menu">
+                <ol>
+                    <li><a href="#">GIỚI THIỆU</a></li>
+                    <li>
+                        <a href="category.html">ĐỒ DÙNG HỌC TẬP</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">BÚT</a>
+                                <ul>
+                                    <li><a href="#">BÚT CHÌ</a></li>
+                                    <li><a href="#">BÚT BI</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">THƯỚC KẺ & TẨY</a></li>
+                            <li><a href="#">HỘP BÚT</a></li>
+                            <li><a href="#">MÀU VẼ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">TẬP VIẾT</a></li>
+                    <li><a href="#">CẶP SÁCH</a></li>
+                    <li><a href="#">MÁY TÍNH CẦM TAY</a></li>
+                </ol>
+            </div>
+            <div class="others">
+                <ol>
+                    <li>
+                        <div class="search-container">
+                            <input type="text" placeholder="Tìm kiếm..." class="search-input" />
+                            <button class="search-button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" title="Đăng ký"><i class="fa fa-user"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" title="Đăng nhập"><i class="fa fa-lock"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                </ol>
+            </div>
+            <script>
+                const header = document.querySelector("header");
+                window.addEventListener("scroll", function () {
+                    x = window.pageYOffset;
+                    if (x > 0) {
+                        header.classList.add("sticky");
+                    } else {
+                        header.classList.remove("sticky");
+                    }
+                });
+            </script>
+        </header>
+        <!--------------------------------- slider ----------------------------------->
+        <section class="slider-container">
+            <div class="slider-top">
+                <div class="slider-left">
+                    <div class="slider-change">
+                        <img src="./images/slide1.jpg" />
+                        <img src="./images/slide4.jpg" />
+                        <img src="./images/slide2.jpg" />
+                    </div>
+                    <button class="prev" onclick="prevSlide()">❮</button>
+                    <button class="next" onclick="nextSlide()">❯</button>
+                </div>
+                <div class="slider-right">
+                    <div class="slider-right-top">
+                        <img src="./images/sale1.jpg" alt="" />
+                    </div>
+                    <div class="slider-right-bottom">
+                        <img src="./images/sale2.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="slider-bottom">
+                <img src="images/slide5.jpg" alt="" />
+            </div>
+        </section>
+        <script>
+            let slideIndex = 0;
+
+            function showSlide(index) {
+                const slides = document.querySelectorAll(".slider-change img");
+                const slider = document.querySelector(".slider-change");
+                var width_div = document.getElementsByClassName("slider-left")[0].offsetWidth;
+                console.log(width_div);
+                if (index >= slides.length) {
+                    slideIndex = 0;
+                } else if (index < 0) {
+                    slideIndex = slides.length - 1;
+                } else {
+                    slideIndex = index;
+                }
+                slider.style.transform = `translateX(${-slideIndex * 800}px)`;
+            }
+
+            function nextSlide() {
+                showSlide(slideIndex + 1);
+            }
+
+            function prevSlide() {
+                showSlide(slideIndex - 1);
+            }
+
+            setInterval(nextSlide, 5000);
+        </script>
+        <!--------------------------------- end slider ----------------------------------->
+
+        <!--------------------------------- homepage content ----------------------------------->
+        <div class="homepage-content">
+            <div class="bestSeller-container">
+                <div class="bestSeller-top">
+                    <h3>HÀNG BÁN CHẠY NHẤT</h3>
+                    <a href="#">Xem tất cả ></a>
+                </div>
+                <div class="bestSeller-bottom">
+                    <div class="bestSeller-items item">
+                        <img class="image" src="images/sale_item1.jpg" alt="" />
+                        <img class="new-icon" src="./images/new.gif" />
+                        <a href="#" class="bestSeller-items-name">ITEMS1</a>
+                        <div class="bestSeller-items-price price">
+                            <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                        </div>
+                    </div>
+                    <div class="bestSeller-items item">
+                        <img class="image" src="images/sale_item2.jpg" alt="" />
+                        <img class="new-icon" src="./images/new.gif" />
+                        <a href="#" class="bestSeller-items-name">ITEMS1</a>
+                        <div class="bestSeller-items-price price">
+                            <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                        </div>
+                    </div>
+                    <div class="bestSeller-items item">
+                        <img class="image" src="images/sale_item3.jpg" alt="" />
+                        <img class="new-icon" src="./images/new.gif" />
+                        <a href="#" class="bestSeller-items-name">ITEMS1</a>
+                        <div class="bestSeller-items-price price">
+                            <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                        </div>
+                    </div>
+                    <div class="bestSeller-items item">
+                        <img class="image" src="images/sale_item4.jpg" alt="" />
+                        <img class="new-icon" src="./images/new.gif" />
+                        <a href="#" class="bestSeller-items-name">ITEMS1</a>
+                        <div class="bestSeller-items-price price">
+                            <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                        </div>
+                    </div>
+                    <div class="bestSeller-items item">
+                        <img class="image" src="images/sale_item5.jpg" alt="" />
+                        <img class="new-icon" src="./images/new.gif" />
+                        <a href="#" class="bestSeller-items-name">ITEMS1</a>
+                        <div class="bestSeller-items-price price">
+                            <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ads-container">
+                <img src="images/slide3.jpg" alt="" />
+            </div>
+            <div class="sale-container">
+                <div class="sale-left">
+                    <div><img src="images/flash_sale.jpg" alt="" /></div>
+                </div>
+                <div class="sale-right">
+                    <div class="sale-top">
+                        <h3>SALE</h3>
+                        <a href="#">Xem tất cả ></a>
+                    </div>
+                    <div class="sale-bottom">
+                        <div class="sale-items item">
+                            <img class="image" src="images/sale_item1.jpg" alt="" />
+                            <a href="#" class="sale-items-name">ITEMS1</a>
+                            <p class="sale-items-price price">
+                                <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                            </p>
+                        </div>
+                        <div class="sale-items item">
+                            <img class="image" src="images/sale_item2.jpg" alt="" />
+                            <a href="#" class="sale-items-name">ITEMS2</a>
+                            <p class="sale-items-price price">
+                                <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                            </p>
+                        </div>
+                        <div class="sale-items item">
+                            <img class="image" src="images/sale_item3.jpg" alt="" />
+                            <a href="#" class="sale-items-name">ITEMS3</a>
+                            <p class="sale-items-price price">
+                                <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                            </p>
+                        </div>
+                        <div class="sale-items item">
+                            <img class="image" src="images/sale_item4.jpg" alt="" />
+                            <a href="#" class="sale-items-name">ITEMS4</a>
+                            <p class="sale-items-price price">
+                                <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                            </p>
+                        </div>
+                        <div class="sale-items item">
+                            <img class="image" src="images/sale_item5.jpg" alt="" />
+                            <a href="#" class="sale-items-name">ITEMS5</a>
+                            <p class="sale-items-price price">
+                                <del>100.000<sup>đ</sup></del> <span>70.000<sup>đ</sup></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--------------------------------- end homepage content ----------------------------------->
+
+        <!--------------------------------- footer ----------------------------------->
+        <footer>
+            <div class="app-container">
+                <img src="images/appstore.jpg" alt="" />
+                <img src="images/googleplay.jpg" alt="" />
+            </div>
+            <div class="footer-top">
+                <li>
+                    <a href=""><img src="./images/dathongbao.jpg" /></a>
+                </li>
+                <li><a href="" style="color: black">Liên hệ</a></li>
+                <li><a href="" style="color: black">Giới thiệu</a></li>
+                <li>
+                    <a href="" class="fab fa-facebook-f"></a>
+                    <a href="" class="fab fa-youtube"></a>
+                    <a href="" class="fab fa-instagram"></a>
+                </li>
+            </div>
+            <section class="footer-text">
+                <p>
+                    Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố
+                    Hà Nội, Việt Nam. Tổng đài hỗ trợ: <span>19001111</span> - Email: <span>cskh@hotro.abc.vn</span>
+                </p>
+                <p>Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Văn A</p>
+                <p>Mã số doanh nghiệp: 1234567890 do Sở Kế hoạch & Đầu tư TP XYZ cấp lần đầu ngày 10/02/2015</p>
+                <p>© 2015 - Bản quyền thuộc về Công ty TNHH ABC</p>
+            </section>
+        </footer>
+        <!--------------------------------- end footer ----------------------------------->
+    </body>
+</html>
