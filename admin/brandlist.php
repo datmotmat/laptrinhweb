@@ -16,7 +16,7 @@ $show_brand = $brand->show_brand();
                             <th>ID</th>
                             <th>Danh mục</th>
                             <th>Loại sản phẩm</th>
-                            <th>Tùy biến</th>
+                            <th>Tùy chỉnh</th>
                         </tr>
                         <?php
                         if($show_brand){$i=0;

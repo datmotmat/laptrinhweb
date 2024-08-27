@@ -15,7 +15,7 @@ $show_category = $category->show_category();
                             <th>Stt</th>
                             <th>ID</th>
                             <th>Danh mục</th>
-                            <th>Tùy biến</th>
+                            <th>Tùy chỉnh</th>
                         </tr>
                         <?php
                         if($show_category){$i=0;
